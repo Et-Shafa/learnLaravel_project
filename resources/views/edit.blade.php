@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
             <label>Tahun Terbit</label>
-            <input type="text" class="form-control" name="tahunterbit" value="{{ $data->tglterbit }}">
+            <input type="text" class="form-control" name="tglterbit" value="{{ $data->tglterbit }}">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
