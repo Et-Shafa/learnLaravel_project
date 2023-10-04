@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BukuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,3 +78,6 @@ Route::get('charts', function () {
 Route::get('tables', function () {
     return view('tables');
 });
+
+
+Route::resource('buku', BukuController::class);

@@ -376,7 +376,7 @@
                 <div class="container-fluid">
                     @yield('main')
 
-                    @yield('button')
+                    @yield('buttons')
                     @yield('card')
 
                     @yield('color')
