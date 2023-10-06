@@ -15,7 +15,7 @@ use App\Http\Controllers\BukuController;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('welcome');
 });
 
 Route::get('dashboard', function () {
@@ -80,4 +80,8 @@ Route::get('tables', function () {
 });
 
 
-Route::resource('buku', BukuController::class);
+Route::resource('buku', BukuController::class)->middleware(['auth','cekstatus']);
+
+Auth::routes(); 
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
