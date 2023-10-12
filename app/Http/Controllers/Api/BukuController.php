@@ -72,7 +72,20 @@ class BukuController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $validator = $request->validate([
+            'namabuku'=>'required',
+            'deskripsi'=>'required',
+            'pencipta'=>'required',
+            'tglterbit'=>'required|integer',
+        ]);
 
+        $data=Buku::find($id);
+        $data->update($validator);
+
+        return response([
+            'message'=>'Data berhasil diubah',
+            'data'=> $data
+        ], 200);
     }
 
     /**
