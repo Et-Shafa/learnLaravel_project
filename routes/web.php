@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukuController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +83,6 @@ Route::get('tables', function () {
 
 Route::resource('buku', BukuController::class)->middleware(['auth','cekstatus']);
 
-Auth::routes(); 
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
