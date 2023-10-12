@@ -13,6 +13,11 @@ class BukuController extends Controller
      */
     public function index()
     {
+
+        // return response([
+        //     'message'=>'Data berhasil ditemukan',
+        //     'data'=>Buku::with('')
+        // ])
         $data = Buku::all();
         return response([
             'code'=> 200,
@@ -33,7 +38,18 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $validator = $request->validate([
+            'namabuku'=>'required',
+            'deskripsi'=>'required',
+            'pencipta'=>'required',
+            'tglterbit'=>'required|integer',
+        ]);
+
+        return response([
+            'message'=>'Data berhasil diinput',
+            'data'=> Buku::create($validator)
+        ],201);
+
     }
 
     /**
