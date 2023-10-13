@@ -57,14 +57,31 @@ class BukuController extends Controller
      */
     public function show(string $id)
     {
-        $data = Buku::find($id);
-        return response([
-            'code'=> 200,
-            'response'=> [
+        try {
+            $data = [
+                'code'=> 200,
+                'response'=> [
                 'message'=> 'success',
-                'data'=> $data
-            ]
-        ], 200);
+                'data'=> Buku::findOrFail($id)
+                ]
+                ];
+        } catch (\Throwable $th) {
+            $data = [
+                'code'=> 204,
+                'response'=> [
+                'message'=> 'fail, Data not found'
+                ]
+                ];
+        }
+        return response($data, 200);
+        // $data = Buku::find($id);
+        // return response([
+        //     'code'=> 200,
+        //     'response'=> [
+        //         'message'=> 'success',
+        //         'data'=> $data
+        //     ]
+        // ], 200);
     }
 
     /**

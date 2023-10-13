@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -82,6 +83,7 @@ Route::get('tables', function () {
 
 
 Route::resource('buku', BukuController::class)->middleware(['auth','cekstatus']);
+Route::resource('upload', UploadController::class);
 
 Auth::routes();
 

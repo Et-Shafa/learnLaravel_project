@@ -25,7 +25,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" class="text-dark">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -384,7 +384,7 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class="container-fluid" id="content">
                     @yield('main')
 
                     @yield('buttons')
@@ -467,6 +467,7 @@
     <script src="{{ asset('sb/js/demo/chart-pie-demo.js') }}"></script>
     <script src="{{ asset('sb/js/demo/chart-bar-demo.js') }}"></script>
     <script src="{{ asset('sb/js/demo/datatables-demo.js') }}"></script>
+
 
 </body>
 
