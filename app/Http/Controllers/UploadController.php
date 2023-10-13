@@ -73,6 +73,6 @@ class UploadController extends Controller
     public function destroy(string $id)
     {
         Upload::find($id)->delete();
-        return redirect('upload')->with('success', 'Data berhasil dihapus');
+        return redirect('upload')->with('warning', 'Data berhasil dihapus');
     }
 }

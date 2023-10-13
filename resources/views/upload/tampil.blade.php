@@ -1,18 +1,12 @@
 @extends('template')
 @section('main')
     <h1>Upload File</h1>
-    @if(session()->has('message'))
-        <div class="alert alert-success">
-            {{ session()->get('message') }}
-        </div>
-    @endif
     <form action="{{ route('upload.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="form-group">
-          <label>Example file input</label>
-          <input type="file" class="form-control-file" name="image">
+        <div style="width: fit-content; display:flex; align-items: center; justify-content: flex-start; margin-bottom:20px;">
+            <input type="file" class="form-control-file" name="image" >
+            <button class="btn btn-success">Submit</button>
         </div>
-        <button class="btn btn-success">Submit</button>
     </form>
     <table class="table">
         <thead>

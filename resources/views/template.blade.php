@@ -385,6 +385,7 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid" id="content">
+                    @include('flash-message')
                     @yield('main')
 
                     @yield('buttons')
